@@ -1,0 +1,22 @@
+body {
+    font-family: "Montserrat", sans-serif;
+}
+
+h1 {
+    font-size: 60px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#showcase-1 {
+    border: 10px solid #13ffed;
+    border-radius: 10px;
+    width: 800px;
+    height: 450px;
+}
+
+#stats {
+    position: absolute;
+    z-index: 10;
+}

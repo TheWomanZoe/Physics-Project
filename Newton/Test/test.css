@@ -1,0 +1,76 @@
+body {
+    font-family: "Montserrat", sans-serif;
+}
+
+.hidden {
+    display: none; !important;
+}
+
+#start-pop-up {
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+    border: 10px solid rgba(0, 255, 217, 0.3);
+    border-radius: 10px;
+    background-color: rgba(0, 255, 217, 0.075);
+    width: 720px;
+}
+
+#start-pop-up h1 {
+    font-size: 50px;
+}
+
+#start-pop-up h2 {
+    font-size: 40px;
+}
+
+#options-start {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 80px;
+}
+
+#options-start p {
+    font-size: 25px;
+    border: 5px solid rgba(54, 198, 255, 0.3);
+    border-radius: 10px;
+    padding: 10px;
+    background: rgba(54, 198, 255, 0.14);
+    cursor: pointer;
+}
+
+#options-start a {
+    text-decoration: none;
+    color: black;
+    font-size: 25px;
+    border: 5px solid rgba(54, 198, 255, 0.3);
+    border-radius: 10px;
+    padding: 10px;
+    background: white;
+}
+
+
+#prev-btn {
+    position: fixed;
+    bottom: 10px;
+    right: 10px;
+    font-size: 25px;
+    border: 5px solid rgba(54, 198, 255, 0.3);
+    border-radius: 10px;
+    padding: 10px;
+    background: white;
+    cursor: pointer;
+}
+
+#next-btn {
+    position: fixed;
+    bottom: 10px;
+    right: 10px;
+    font-size: 25px;
+    border: 5px solid rgba(54, 198, 255, 0.3);
+    border-radius: 10px;
+    padding: 10px;
+    background: rgba(54, 198, 255, 0.14);
+    cursor: pointer;
+}
