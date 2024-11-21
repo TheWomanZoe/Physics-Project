@@ -14,8 +14,10 @@ function StartTest(){
     const nextbtn = document.getElementById('next-btn');
     const prevbtn = document.getElementById('prev-btn');
     let currQuestion = 1;
+    let currAnswers = [];
     let points = 0;
 
+    // questions and answers
     const allQuestions = [
         "Какво гласи първият закон на Нютон (закон за инерцията)?",
         "Какво определя вторият закон на Нютон?",
@@ -101,22 +103,104 @@ function StartTest(){
     }
 
     function displayQuestion(){
-        question.innerHTML = allQuestions[currQuestion - 1];
+        question.innerHTML = `${currQuestion}:  ` + allQuestions[currQuestion - 1];
+        document.getElementById("answers").innerHTML = "";
+
+        if (currQuestion < 13) {
+            for (let i = 0; i < 3; i++) {
+                let answer = document.createTextNode(Object.keys(allAnswers[currQuestion])[i]);
+                let answerHolder = document.createElement("p");
+
+                answerHolder.appendChild(answer);
+                answerHolder.classList.add("closed-answer");
+                document.getElementById("answers").appendChild(answerHolder);
+
+                answerHolder.addEventListener("click", () => {
+                    document.querySelectorAll(".closed-answer").forEach(e => e.classList.remove("selected"));
+                    answerHolder.classList.add("selected");
+                });
+            }
+        }
+        else {
+            let answerbox = document.createElement("textarea");
+            answerbox.placeholder = "Запиши отговорът с мерната единица, разделени с празно място (например: 5 m/s^2, 60 N). Ако се изискат два или повече отговора, отдели ги с запетайка и празно място (8 N, 10 m/s^2).";
+            answerbox.id = "open-answer";
+
+            document.getElementById("answers").appendChild(answerbox);
+        }
+    }
+    function checkAnswer(){
+        if (currQuestion < 13){
+            let selected = document.querySelector(".selected");
+            if (selected === null){
+                alert("Не забравяй да избереш отговор!");
+                return;
+            }
+            if (allAnswers[currQuestion][selected.innerHTML] === 1){
+                points++;
+                console.log(points);
+            }
+        }
+        else {
+            let answer = document.getElementById("open-answer").value;
+            if (answer === allAnswers[currQuestion]){
+                points += 3;
+                console.log(points);
+            }
+        }
+    }
+    function endTest(){
+        if (document.getElementById("result") === null) { // more than one click on the button won't create more results
+            const result = document.createElement("div");
+            result.id = "result";
+            result.innerHTML = `
+            <h2>Тестът приключи!</h2>
+            <p>
+                Ти събра ${points}/21 точки. <br>
+                Твоята оценка е ${(((points / 21) * 4) + 2).toFixed(2)}
+            </p>
+        `;
+
+            document.body.appendChild(result);
+        }
     }
 
     displayQuestion();
 
     nextbtn.addEventListener("click", () => {
         if (currQuestion < allQuestions.length){
+            checkAnswer();
             currQuestion++;
             displayQuestion();
+
+            if (currQuestion === 15){
+                nextbtn.innerHTML = "Приключи теста";
+                nextbtn.addEventListener("click", () => {
+                    console.log("end of test")
+                    endTest();
+                });
+            }
         }
     });
 
     prevbtn.addEventListener("click", () => {
-        if (currQuestion > 1){
-            currQuestion--;
-            displayQuestion();
+        if (document.getElementById("result") === null) {
+            if (currQuestion > 1) {
+                if (currQuestion < 13) {
+                    if (points > 0)
+                        points--;
+                    // points won't go below 0
+                    console.log(points);
+                } else {
+                    if (points > 2)
+                        points -= 3;
+                    // points won't go below 0
+                }
+
+                currQuestion--;
+                displayQuestion();
+                nextbtn.innerHTML = "Следващ въпрос";
+            }
         }
     });
 }
