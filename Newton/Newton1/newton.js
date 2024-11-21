@@ -30,7 +30,7 @@ const ground = Bodies.rectangle(400, 440, 800, 40, {
 
 World.add(world, ground)
 
-const ball = Bodies.circle(400, 100, 40, {
+const ball = Bodies.circle(400, 300, 40, {
     restitution: 0.8,
     render: {
         fillStyle: '#87CEEB'
@@ -38,3 +38,8 @@ const ball = Bodies.circle(400, 100, 40, {
 })
 
 World.add(world, ball)
+
+Matter.Events.on(engine, 'beforeUpdate', () => {
+    const speed = Math.sqrt(ball.velocity.x ** 2 + ball.velocity.y ** 2).toFixed(2);
+    stats.textContent = `Speed: ${speed}`;
+});

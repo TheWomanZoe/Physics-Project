@@ -31,16 +31,30 @@ const ground = Bodies.rectangle(400, 440, 800, 40, {
 
 World.add(world, ground)
 
-const ball = Bodies.circle(400, 100, 40, {
+const ballA = Bodies.circle(100, 400, 40, {
     restitution: 0.8,
     render: {
         fillStyle: '#87CEEB'
     }
-})
+});
 
-World.add(world, ball)
+const ballB = Bodies.circle(700, 400, 40, {
+    restitution: 0.8,
+    render: {
+        fillStyle: '#FF6347'
+    }
+});
 
-Matter.event.on(engine, 'beforeUpdate', () => {
-    const speed = Math.sqrt(ball.velocity.x ** 2 + ball.velocity.y).toFixed(2);
-    stats.textContent = `Speed ${speed}`
-})
+World.add(world, [ballA, ballB]);
+
+Matter.Events.on(engine, 'beforeUpdate', () => {
+    const forceMagnitude = 0.001;
+    const force = { x: forceMagnitude, y: 0 };
+
+    Matter.Body.applyForce(ballA, { x: ballA.position.x, y: ballA.position.y }, force);
+    Matter.Body.applyForce(ballB, { x: ballB.position.x, y: ballB.position.y }, { x: -force.x, y: -force.y });
+
+    const speedA = Math.sqrt(ballA.velocity.x ** 2 + ballA.velocity.y ** 2).toFixed(2);
+    const speedB = Math.sqrt(ballB.velocity.x ** 2 + ballB.velocity.y ** 2).toFixed(2);
+    stats.textContent = `Speed A: ${speedA}, Speed B: ${speedB}`;
+});
