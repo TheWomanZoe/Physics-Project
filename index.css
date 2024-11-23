@@ -1,0 +1,147 @@
+html, body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+}
+
+body {
+    font-family: Montserrat, sans-serif;
+    background-size: cover;
+    background: linear-gradient(135deg, rgba(0, 255, 247, 0.3), rgba(54, 198, 255, 0.3), rgba(0, 123, 255, 0.3), rgba(0, 255, 123, 0.3)) no-repeat fixed;
+}
+
+#description {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 100px;
+}
+
+#title {
+    font-size: 50px;
+    border: 10px solid rgba(54, 198, 255, 0.3);
+    border-radius: 10px;
+    background-color: rgba(54, 198, 255, 0.14);
+    width: 50%;
+    height: 440px;
+    padding-left: 30px;
+}
+
+#perks {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    margin-left: 10px;
+}
+
+#perks h2 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 50px;
+    border: 10px solid rgba(54, 198, 255, 0.3);
+    border-radius: 10px;
+    background-color: rgba(54, 198, 255, 0.14);
+    height: 110px;
+    width: 600px;
+    margin: 5px;
+}
+
+#perks p {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 50px;
+    border: 10px solid rgba(54, 198, 255, 0.3);
+    border-radius: 10px;
+    background-color: rgba(54, 198, 255, 0.14);
+    height: 80px;
+    width: 600px;
+    margin: 5px;
+    opacity: 0;
+    animation: fadeIn 3s forwards;
+}
+
+#perks p:nth-child(2) {
+    animation-delay: 1s;
+}
+
+#perks p:nth-child(3) {
+    animation-delay: 2s;
+}
+
+#perks p:nth-child(4) {
+    animation-delay: 3s;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+#material-name {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 60px;
+    margin-top: 200px;
+}
+
+#title-8 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 70px;
+    border: 10px solid rgba(0, 128, 255, 0.3);
+    border-radius: 10px;
+    background-color: rgba(0, 128, 255, 0.14);
+    color: white;
+}
+
+#lessons-8 {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+}
+
+#lessons-8 a {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 34px;
+    text-decoration: none;
+    color: black;
+    height: 85px;
+    width: 400px;
+    border: 10px solid rgba(0, 128, 255, 0.3);
+    border-radius: 10px;
+    background-color: rgba(0, 128, 255, 0.14);
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#title-9 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 70px;
+    border: 10px solid rgba(255, 183, 0, 0.3);
+    border-radius: 10px;
+    background-color: rgba(255, 221, 0, 0.14);
+    color: white;
+}
+
+#title-10 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 70px;
+    border: 10px solid rgba(72, 255, 0, 0.3);
+    border-radius: 10px;
+    background-color: rgba(0, 255, 34, 0.14);
+    color: white;
+}

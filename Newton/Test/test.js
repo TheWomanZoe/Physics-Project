@@ -158,6 +158,7 @@ function StartTest(){
                 Ти събра ${points}/21 точки. <br>
                 Твоята оценка е ${(((points / 21) * 4) + 2).toFixed(2)}
             </p>
+            <a href = "../../../Physics%20Project/index.html">Започни нова тема</a>
         `;
 
             document.body.appendChild(result);

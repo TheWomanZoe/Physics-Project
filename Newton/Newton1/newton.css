@@ -54,6 +54,19 @@ h1 {
     padding: 20px;
 }
 
+#prev-lesson {
+    position: fixed;
+    bottom: 10px;
+    left: 10px;
+    text-decoration: none;
+    font-size: 25px;
+    border: 5px solid rgba(54, 198, 255, 0.3);
+    border-radius: 10px;
+    padding: 10px;
+    background: white;
+    color: black;
+}
+
 #next-lesson {
     position: fixed;
     bottom: 10px;
