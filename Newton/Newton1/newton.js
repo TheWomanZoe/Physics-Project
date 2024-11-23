@@ -41,5 +41,5 @@ World.add(world, ball)
 
 Matter.Events.on(engine, 'beforeUpdate', () => {
     const speed = Math.sqrt(ball.velocity.x ** 2 + ball.velocity.y ** 2).toFixed(2);
-    stats.textContent = `Speed: ${speed}`;
+    stats.textContent = `Скорост: ${speed} m/s`;
 });

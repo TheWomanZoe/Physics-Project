@@ -56,5 +56,6 @@ Matter.Events.on(engine, 'beforeUpdate', () => {
 
     const speedA = Math.sqrt(ballA.velocity.x ** 2 + ballA.velocity.y ** 2).toFixed(2);
     const speedB = Math.sqrt(ballB.velocity.x ** 2 + ballB.velocity.y ** 2).toFixed(2);
-    stats.textContent = `Speed A: ${speedA}, Speed B: ${speedB}`;
+    stats.textContent = `Скорост A: ${speedA}, Посока: дясно;
+    Скорост B: ${speedB}, Посока: ляво`;
 });

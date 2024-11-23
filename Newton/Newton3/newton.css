@@ -9,8 +9,39 @@ h1 {
     align-items: center;
 }
 
+#text-holder {
+    border: 10px solid rgba(54, 198, 255, 0.3);
+    border-radius: 10px;
+    background-color: rgba(54, 198, 255, 0.14);
+}
+
+.explanation {
+    font-size: 28px;
+    font-weight: 500;
+    text-align: justify;
+    max-width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.highlight {
+    font-size: 34px;
+    margin-left: auto;
+    margin-right: auto;
+    background-color: rgba(19, 255, 237, 0.15);
+    border: 10px solid rgba(47, 47, 222, 0.45);
+    border-radius: 10px;
+    width: fit-content;
+    max-width: 800px;
+    height: fit-content;
+    padding: 10px 25px;
+    text-align: justify;
+}
+
 #showcase-1 {
-    border: 10px solid #13ffed;
+    margin-left: auto;
+    margin-right: auto;
+    border: 10px solid rgba(0, 255, 217, 0.3);
     border-radius: 10px;
     width: 800px;
     height: 450px;
@@ -18,7 +49,33 @@ h1 {
 
 #stats {
     position: absolute;
-    /* center it */
     font-size: 24px;
     z-index: 10;
+    padding-left: 20px;
+}
+
+#prev-lesson {
+    position: fixed;
+    bottom: 10px;
+    left: 10px;
+    text-decoration: none;
+    font-size: 25px;
+    border: 5px solid rgba(54, 198, 255, 0.3);
+    border-radius: 10px;
+    padding: 10px;
+    background: white;
+    color: black;
+}
+
+#next-lesson {
+    position: fixed;
+    bottom: 10px;
+    right: 10px;
+    text-decoration: none;
+    font-size: 25px;
+    border: 5px solid rgba(54, 198, 255, 0.3);
+    border-radius: 10px;
+    padding: 10px;
+    background: rgba(54, 198, 255, 0.14);
+    color: black;
 }

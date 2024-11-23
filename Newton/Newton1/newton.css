@@ -49,9 +49,9 @@ h1 {
 
 #stats {
     position: absolute;
-    /* center it */
     font-size: 24px;
     z-index: 10;
+    padding: 20px;
 }
 
 #next-lesson {
@@ -64,5 +64,5 @@ h1 {
     border-radius: 10px;
     padding: 10px;
     background: rgba(54, 198, 255, 0.14);
-    cursor: pointer;
+    color: black;
 }

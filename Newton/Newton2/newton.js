@@ -38,7 +38,7 @@ const ball = Bodies.circle(400, 400, 40, {
     }
 });
 
-const force = 0.02;
+const force = 0.01;
 const mass = ball.mass;
 const acceleration = force / mass; // Newton's 2nd law: F = m * a
 
@@ -53,9 +53,11 @@ Matter.Events.on(engine, 'beforeUpdate', () => {
     } else if (ball.position.x < 0) {
         Matter.Body.setPosition(ball, { x: showcase1.clientWidth, y: ball.position.y });
     }
+
+    // When the ball reaches terminal velocity, it will stop accelerating, due to the force being applied being equal to the force of friction
 });
 
 Matter.Events.on(engine, 'beforeUpdate', () => {
     const speed = Math.sqrt(ball.velocity.x ** 2 + ball.velocity.y ** 2).toFixed(2);
-    stats.textContent = `Speed: ${speed}`;
+    stats.textContent = `Сила: ${force} N; Посока на силата - дясно; Скорост: ${speed} m/s`;
 });
