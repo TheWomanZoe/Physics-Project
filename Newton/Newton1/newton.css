@@ -38,6 +38,40 @@ h1 {
     text-align: justify;
 }
 
+#control-title {
+    font-size: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 60px;
+    margin-bottom: 20px;
+}
+
+#showcase-control-holder {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    gap: 10px
+}
+
+#body-controls {
+    font-size: 32px;
+    text-align: center;
+}
+
+.controls{
+    font-family: "Montserrat", sans-serif;
+    font-size: 25px;
+    border: 5px solid rgba(54, 198, 255, 0.3);
+    border-radius: 10px;
+    padding: 10px;
+    background: rgba(54, 198, 255, 0.14);
+    cursor: pointer;
+}
+
 #showcase-1 {
     margin-left: auto;
     margin-right: auto;
@@ -45,6 +79,7 @@ h1 {
     border-radius: 10px;
     width: 800px;
     height: 450px;
+    margin-bottom: 70px;
 }
 
 #stats {
